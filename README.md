@@ -52,12 +52,6 @@ headers: {
   "X-BeaconGrid-Topic": "{topic}",
   "X-BeaconGrid-Signature": "{signature}"
 },
-body: headers: {
-  'Content-Type': 'application/json',
-  'X-BeaconGrid-Device-MAC': message.webhook.thingName,
-  'X-BeaconGrid-Topic': message.webhook.topic,
-  'X-BeaconGrid-Signature': signature
-},
 body: [
   {
     "timeDetected": "2016-09-12T16:35:34.042032Z",
