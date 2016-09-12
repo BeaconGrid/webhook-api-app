@@ -24,8 +24,8 @@ The `postUrl` in this form is a test API which you could find its source code in
 
 **Note:**  
 The important here is before user could create a Webhook they should have an API URL considered as `postUrl`.
-This API should support both `GET` and `POST`. The `GET` method would be called by BeaconGrid app to validate
-the API URL and the `POST` method would be the actual method which BeaconGrid app uses to post the data to your API.
+This API should support both `GET` and `POST`. The `GET` method would be called by BeaconGrid app to validate the API URL and the `POST` method would be the actual method which BeaconGrid app uses to post the data to your API.
+For more details about this you could have a look into: [apis/nodejs-express/routes/gridscan.js](https://github.com/BeaconGrid/webhook-api-app/blob/master/apis/nodejs-express/routes/gridscan.js).
 
 3- After adding the Webhook the grid would look like this:
 
