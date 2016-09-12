@@ -43,3 +43,29 @@ as you see in the picture the `GET` response of the `postUrl` contains the `vali
 
 [![gridscan-webhooks-after-validation.png](https://s17.postimg.org/bw8k9ejen/gridscan_webhooks_after_validation.png)](https://postimg.org/image/jc7tv773v/)
 
+6- After your Webhook is validated BeaconGrid app would post every new  message from both `{thingName}/nearby/bleThings` and `{thingName}/nearby/hotspots` topics and to post this data uses the API URL user has provided as `postUrl`. This is the structure of data you will recieve your API:
+
+```json
+headers: {
+  'Content-Type': 'application/json',
+  'X-BeaconGrid-Device-MAC': {thingName},
+  'X-BeaconGrid-Topic': {topic},
+  'X-BeaconGrid-Signature': {signature}
+},
+body: {
+  'thingName': 'C47F510151B4',
+  'timeStamp': '2016-08-16T19:19:53.058640Z',
+  'bleNumBroadcasts': 26707,
+  'wifiMacAddress': 'C47F510151B4',
+  'wifiUptime': 22212760,
+  'wifiRSSI': -55,
+  'wifiSSID': '13814IOT',
+  'wifiChannel': 1,
+  'wifiSecurityType': 'WPA2_AES_PSK',
+  'privateIP': '192.168.1.11',
+  'wifiFirmwareVer': '3.0.1',
+  'bleMacAddress': '00:1E:C0:21:E7:F5',
+  'bleFirmwareVer': 'MCHP BTLE v1.33.4 SDS 11/6/2015'
+}
+```
+
