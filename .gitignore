@@ -1,0 +1,9 @@
+node_modules/
+public/components
+.sass-cache
+
+.idea
+
+test.js
+
+npm-debug.log

@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "lambda_beacongrid_full_access",
+    "name": "webhook-api-app",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "tt51f0isej",
+    "module": "index"
+  }
+}
