@@ -55,6 +55,9 @@ router.post('/', function (req, res) {
     }
   ]
   * */
+  console.log('-----GRIDSCAN-POSTED-MESSAGE----');
+  console.log(req.body);
+  console.log('---------------------------------');
   res.json({
     token: secrets.validator
   });
