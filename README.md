@@ -19,6 +19,7 @@ output.
     ![GridScan-webhooks-grids.png](https://s16.postimg.org/ejnb0p7mr/Selection_001.png)
 
 2. Click on the add button in the table's header to add a new Webhook:
+
     ![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/fzytiuajl/Selection_002.png)
 
     Each Webhook has 6 fields.
@@ -65,7 +66,7 @@ right to see the Validate button.
 3. Make sure that the table refreshes, and that the Webhook you created earlier now
 reads "Validated" where the Validate button used to be.
 
-    [![gridscan-webhooks-grid-validated-webhook.png](https://s16.postimg.org/7mt4o6bc1/Selection_006.png)](https://postimg.org/image/7mt4o6bc1/)
+    ![gridscan-webhooks-grid-validated-webhook.png](https://s16.postimg.org/7mt4o6bc1/Selection_006.png)
 
 4. All's working! Check the console output of your listening server - you should
 have data coming in.
