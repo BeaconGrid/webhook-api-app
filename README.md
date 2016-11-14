@@ -1,50 +1,85 @@
 # BeaconGrid WebHookAPI App
-This application shows how to get started using the BeaconGrid WebHookAPI
-and how to begin to receive webhook data from gridScan.
 
+## Overview
+This project (and README) will show you how to get started using BeaconGrid's
+Webhook API to receive data from GridScan.
+
+First, we'll set up a Webhook Secret and a Webhook Validator using the
+BeaconGrid dashboard interface. Then, we'll configure and start a demo listening
+server (two demo implementations are provided in this project; we'll use
+nodejs-express). Lastly, we'll verify that the listening server is working
+correctly using the BeaconGrid dashboard interface and the server's console
+output.
 
 ## How to setup a BeaconGrid Webhook
+1. Log into your account and open the [GridScan page](https://dashboard.beacongrid.com/#/GridScans).
+    Here, you'll see a table listing **GridScan Webhooks**. Note that this
+    list includes both WiFi and BLE beacons.
 
-1- First step is to log into your account and open the GridScan page.
-In this page user sees two different grids one for **GridScan WiFi Webhooks**
-and the other for **GridScan Bluetooth Webhooks**
+    [![GridScan-webhooks-grids.png](https://s16.postimg.org/3k23p3h7l/Selection_001.png)](https://postimg.org/image/3k23p3h7l/)
 
-[![GridScan-webhooks-grids.png](https://s13.postimg.org/llvatoj3r/Grid_Scan_webhooks_grids.png)](https://postimg.org/image/ama3i2soj/)
+2. Click on the add button in the table's header to add a new Webhook:
+    [![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/fzytiuajl/Selection_002.png)](https://postimg.org/image/fzytiuajl/)
 
-2-Second step is to click on the add button of any of the grids above to define the webhook:
+    Each Webhook has 6 fields.
 
-[![grid-scan-add-webhook-dialog.png](https://s3.postimg.org/7wanzslxv/grid_scan_add_webhook_dialog.png)](https://postimg.org/image/xf30ct5hr/)
+    [![gridscan-add-webhook-filled.png](https://s16.postimg.org/4eonb4p29/Selection_005.png)](https://postimg.org/image/4eonb4p29/)
 
-As you see in the picture each Webhook has 4 different fields, three of which
-are supposed to be filled in by user and the 4th field `validator` would be automatically genarated:
+    Fill in every field except for the Validator field, which will be generated
+    for you. The `postUrl` in this form should be the address of the server you
+    intend to run the listening server on with the suffix `/gridscan`. For
+    instance, if your server is accessible as `https://orangecustard.net`, the
+    `postUrl` should be `https://orangecustard.net/gridscan`.
 
-[![gridscan-add-webhook-filled.png](https://s15.postimg.org/5h5aut6ej/gridscan_add_webhook_filled.png)](https://postimg.org/image/5h5aut6ef/)
+4. Make a note of the Secret and Validator values - we'll need them in a minute.
 
-The `postUrl` in this form is a test API which you could find its source code in the `apis/aws-api-gateway` folder in this repository.
+5. Make sure that after adding the Webhook, the grid looks like this:
 
-**Note:**  
-The important here is before user could create a Webhook they should have an API URL considered as `postUrl`.
-This API should support both `GET` and `POST`. The `GET` method would be called by BeaconGrid app to validate the API URL and the `POST` method would be the actual method which BeaconGrid app uses to post the data to your API.
-For more details about this you could have a look into: [apis/nodejs-express/routes/gridscan.js](https://github.com/BeaconGrid/webhook-api-app/blob/master/apis/nodejs-express/routes/gridscan.js).
+    [![gridscan-webhooks-grid-new-webhook.png](https://s3.postimg.org/c8fmm1tu7/Selection_004.png](https://postimg.org/image/c8fmm1tu7/)
 
-3- After adding the Webhook the grid would look like this:
+    We're now going to run the demo listening server on the server we specified
+    as the `postUrl` for our Webhook. We'll return to the BeaconGrid dashboard
+    interface afterwards.
 
-[![gridscan-webhooks-grid-new-webhook.png](https://s22.postimg.org/mpdrgc9zl/gridscan_webhooks_grid_new_webhook.png)](https://postimg.org/image/5ouv7nwy5/)
+## Running the demo listening server
+The listening server provided with this project requires modern versions of
+node and npm. This has been tested with node @ v7.0.0 and npm @ v3.10.8. After
+downloading node and npm (usually bundled), navigate to
+`.../webhook-api-app/apis/nodejs-express`.
 
-By clicking on `show` link you would see the secret and by clicking on `VALIDATE` button you could validate you Webhooks.
+1. Install all the project dependencies with `npm install`.
+2. Edit `secrets.json` to contain the secret and validator fields from the
+BeaconGrid dashboard.
+2. Start the listening server with `PORT=8080 npm start`. Server requests will
+be printed to console, but not logged. Note that you can change the port you
+listen on by changing the environment variable `PORT`.
+3. Navigate to `http://localhost` (or `http://postUrl`) and verify that you see the
+BeaconGrid Webhook API front-page.
 
-4- In order to validate your Webhook as mentioned above user should first create an API which its `GET` method returns a response which contains the **validator** which has been generated by the BeaconGrid app. You could see the return value of the the sample API which we have created:
+## Verifying the listening server
+1. Return to the BeaconGrid dashboard's
+[GridScan page](https://dashboard.beacongrid.com/#/webhooks).
+2. Find the Webhook you created earlier in the table, and click the Validate
+button on the far right of the Webhook's row. You may need to scroll the table
+right to see the Validate button.
+3. Make sure that the table refreshes, and that the Webhook you created earlier now
+reads "Validated" where the Validate button used to be.
 
-[![gridscan-sample-api-get.png](https://s9.postimg.org/m8yzj81cv/gridscan_sample_api_get.png)](https://postimg.org/image/o0rye4kpn/)
+    [![gridscan-webhooks-grid-validated-webhook.png](https://s16.postimg.org/7mt4o6bc1/Selection_006.png)](https://postimg.org/image/7mt4o6bc1/)
 
-as you see in the picture the `GET` response of the `postUrl` contains the `validator` which means our Webhook is ready to be validated.
+4. All's working! Check the console output of your listening server - you should
+have data coming in.
 
-5- User can add more than one Webhook without validating them but after validating the Webhook the grid would look like this:
+## Extending & customizing the listening server
+You can extend the nodejs-express demo listening server, or implement your own
+in whatever language or framework you prefer; the listening server can be any
+API that supports both a `GET` and `POST`. The `GET` method would be called by
+the BeaconGrid app to validate the API URL and the `POST` method would be the
+actual method which the BeaconGrid app uses to post the data to your API.
 
-[![gridscan-webhooks-after-validation.png](https://s17.postimg.org/bw8k9ejen/gridscan_webhooks_after_validation.png)](https://postimg.org/image/jc7tv773v/)
+To see the routing implementation in the demo listening server: [apis/nodejs-express/routes/gridscan.js](https://github.com/BeaconGrid/webhook-api-app/blob/master/apis/nodejs-express/routes/gridscan.js).
 
-6- After your Webhook is validated BeaconGrid app would post every new  message from both `{thingName}/nearby/bleThings` and `{thingName}/nearby/hotspots` topics and to post this data uses the API URL user has provided as `postUrl`. This is the structure of data you will recieve your API:
-
+## Example data POSTed to the listening server
 ```json
 headers: {
   "Content-Type": "application/json",
@@ -87,4 +122,3 @@ body: [
   }
 ]
 ```
-
