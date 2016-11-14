@@ -66,7 +66,7 @@ right to see the Validate button.
 3. Make sure that the table refreshes, and that the Webhook you created earlier now
 reads "Validated" where the Validate button used to be.
 
-    ![gridscan-webhooks-grid-validated-webhook.png](https://s16.postimg.org/7mt4o6bc1/Selection_006.png)
+    ![gridscan-webhooks-grid-validated-webhook.png](https://s16.postimg.org/g52ksihur/Selection_006.png)
 
 4. All's working! Check the console output of your listening server - you should
 have data coming in.
