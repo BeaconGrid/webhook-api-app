@@ -20,11 +20,11 @@ output.
 
 2. Click on the add button in the table's header to add a new Webhook:
 
-    ![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/fzytiuajl/Selection_002.png)
+    ![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/3y3fop1b9/Selection_002.png)
 
     Each Webhook has 6 fields.
 
-    ![gridscan-add-webhook-filled.png](https://s16.postimg.org/4eonb4p29/Selection_005.png)
+    ![gridscan-add-webhook-filled.png](https://s16.postimg.org/ggk159yat/Selection_005.png)
 
     Fill in every field except for the Validator field, which will be generated
     for you. The `postUrl` in this form should be the address of the server you
