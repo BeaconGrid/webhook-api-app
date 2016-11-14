@@ -16,14 +16,14 @@ output.
     Here, you'll see a table listing **GridScan Webhooks**. Note that this
     list includes both WiFi and BLE beacons.
 
-    [![GridScan-webhooks-grids.png](https://s16.postimg.org/3k23p3h7l/Selection_001.png)](https://postimg.org/image/3k23p3h7l/)
+    ![GridScan-webhooks-grids.png](https://s16.postimg.org/ejnb0p7mr/Selection_001.png)
 
 2. Click on the add button in the table's header to add a new Webhook:
-    [![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/fzytiuajl/Selection_002.png)](https://postimg.org/image/fzytiuajl/)
+    ![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/fzytiuajl/Selection_002.png)
 
     Each Webhook has 6 fields.
 
-    [![gridscan-add-webhook-filled.png](https://s16.postimg.org/4eonb4p29/Selection_005.png)](https://postimg.org/image/4eonb4p29/)
+    ![gridscan-add-webhook-filled.png](https://s16.postimg.org/4eonb4p29/Selection_005.png)
 
     Fill in every field except for the Validator field, which will be generated
     for you. The `postUrl` in this form should be the address of the server you
@@ -35,7 +35,7 @@ output.
 
 5. Make sure that after adding the Webhook, the grid looks like this:
 
-    [![gridscan-webhooks-grid-new-webhook.png](https://s3.postimg.org/c8fmm1tu7/Selection_004.png](https://postimg.org/image/c8fmm1tu7/)
+    ![gridscan-webhooks-grid-new-webhook.png](https://s3.postimg.org/c8fmm1tu7/Selection_004.png
 
     We're now going to run the demo listening server on the server we specified
     as the `postUrl` for our Webhook. We'll return to the BeaconGrid dashboard
