@@ -24,7 +24,7 @@ output.
 
     Each Webhook has 6 fields.
 
-    ![gridscan-add-webhook-filled.png](https://s16.postimg.org/ggk159yat/Selection_005.png)
+    ![gridscan-add-webhook-filled.png](https://s3.amazonaws.com/beacongrid-hosted-media/WebhookSetup.png)
 
     Fill in every field except for the Validator field, which will be generated
     for you. The `postUrl` in this form should be the address of the server you
@@ -36,7 +36,7 @@ output.
 
 5. Make sure that after adding the Webhook, the grid looks like this:
 
-    ![gridscan-webhooks-grid-new-webhook.png](https://s3.postimg.org/c8fmm1tu7/Selection_004.png
+    ![gridscan-webhooks-grid-new-webhook.png](https://s3.postimg.org/c8fmm1tu7/Selection_004.png)
 
     We're now going to run the demo listening server on the server we specified
     as the `postUrl` for our Webhook. We'll return to the BeaconGrid dashboard
@@ -51,18 +51,24 @@ downloading node and npm (usually bundled), navigate to
 1. Install all the project dependencies with `npm install`.
 2. Edit `secrets.json` to contain the secret and validator fields from the
 BeaconGrid dashboard.
-2. Start the listening server with `PORT=8080 npm start`. Server requests will
+2. Start the listening server with `npm start`. Server requests will
 be printed to console, but not logged. Note that you can change the port you
-listen on by changing the environment variable `PORT`.
+listen on by changing the environment variable `PORT`. The listening server defaults to 
+port 80 but looks for an environment variable `PORT` if you would prefer to have it listen 
+via another port.
 3. Navigate to `http://localhost` (or `http://postUrl`) and verify that you see the
 BeaconGrid Webhook API front-page.
+4. In order for the listening server to receive information, the server you are running it on
+must have the port you are using forwarded via your router. Unless the port is forwarded, 
+the listening server will not be able to receive the Webhook http requests.
 
 ## Verifying the listening server
 1. Return to the BeaconGrid dashboard's
 [GridScan page](https://dashboard.beacongrid.com/#/webhooks).
 2. Find the Webhook you created earlier in the table, and click the Validate
 button on the far right of the Webhook's row. You may need to scroll the table
-right to see the Validate button.
+right to see the Validate button. Note: If the validation fails, make sure to check that
+the currently listening demo app is able to receive requests externally.
 3. Make sure that the table refreshes, and that the Webhook you created earlier now
 reads "Validated" where the Validate button used to be.
 
