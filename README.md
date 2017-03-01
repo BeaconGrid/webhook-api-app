@@ -19,11 +19,7 @@ output.
     ![GridScan-webhooks-grids.png](https://s16.postimg.org/ejnb0p7mr/Selection_001.png)
 
 2. Click on the add button in the table's header to add a new Webhook:
-
-    ![grid-scan-add-webhook-dialog.png](https://s16.postimg.org/3y3fop1b9/Selection_002.png)
-
-    Each Webhook has 6 fields.
-
+    
     ![gridscan-add-webhook-filled.png](https://s3.amazonaws.com/beacongrid-hosted-media/WebhookSetup.png)
 
     Fill in every field except for the Validator field, which will be generated
