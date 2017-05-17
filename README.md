@@ -8,92 +8,92 @@ Webhook API to receive data from GridScan.
 
 1. We will be using AWS (Amazon Web Services) to setup a simple free-tier server environment
 to test this example application. If you do not already have an AWS account, it is free to
-sign up at [AWS Signup](https://aws.amazon.com/).
+sign up at [AWS Signup](https://aws.amazon.com/).<br/>
 
 2. Once you have completed the creation of your AWS account, you'll be taken to their console.
 Click on the 'Services' button in the top-left corner of the screen to display the list
-of AWS products then click on 'Elastic Beanstalk' in the 'Compute' section.
-![step2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2.PNG)
+of AWS products then click on 'Elastic Beanstalk' in the 'Compute' section.<br/>
+![step2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2.PNG)<br/>
 
 3. Once on the Elastic Beanstalk landing page, click the 'Create New Application' in the top right
-of the screen.
-![step3.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3.PNG)
-![step3-2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3-2.PNG)
+of the screen.<br/>
+![step3.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3.PNG)<br/>
+![step3-2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3-2.PNG)<br/>
 
 4. Enter your Application Name and a Description into the provided textboxes, then click the
-'Create' button in the bottom-right of the popup.
-![step4.png](https://s3.amazonaws.com/beacongrid-hosted-media/step4.PNG)
+'Create' button in the bottom-right of the popup.<br/>
+![step4.png](https://s3.amazonaws.com/beacongrid-hosted-media/step4.PNG)<br/>
 
 5. You will then be taken to your new application's dashboard. Click the 'Create One Now' link
-on the page to setup an environment to run the application in.
-![step5.png](https://s3.amazonaws.com/beacongrid-hosted-media/step5.PNG)
+on the page to setup an environment to run the application in.<br/>
+![step5.png](https://s3.amazonaws.com/beacongrid-hosted-media/step5.PNG)<br/>
 
 6. Select the 'Web Server Environment' option, then click the 'Select' button in the bottom-right
-of the popup.
-![step6.png](https://s3.amazonaws.com/beacongrid-hosted-media/step6.PNG)
+of the popup.<br/>
+![step6.png](https://s3.amazonaws.com/beacongrid-hosted-media/step6.PNG)<br/>
 
 7. Several Options will then be displayed. For the 'Platform' option, select 'Node.js' as the 
-platform. For the 'Application code' option, select 'Upload your code'.
-![step7.png](https://s3.amazonaws.com/beacongrid-hosted-media/step7.PNG)
+platform. For the 'Application code' option, select 'Upload your code'.<br/>
+![step7.png](https://s3.amazonaws.com/beacongrid-hosted-media/step7.PNG)<br/>
 
-8. Click the 'Upload' button in the 'Application code' option section.
-![step8.png](https://s3.amazonaws.com/beacongrid-hosted-media/step8.PNG)
+8. Click the 'Upload' button in the 'Application code' option section.<br/>
+![step8.png](https://s3.amazonaws.com/beacongrid-hosted-media/step8.PNG)<br/>
 
 9. In the 'Source code origin' section select 'Local file', then click 'Browse' and locate
-the 'nodejs-express.zip' file within your cloned copy of this repository and select it.
-![step9.png](https://s3.amazonaws.com/beacongrid-hosted-media/step9.PNG)
+the 'nodejs-express.zip' file within your cloned copy of this repository and select it.<br/>
+![step9.png](https://s3.amazonaws.com/beacongrid-hosted-media/step9.PNG)<br/>
 
 10. Click the 'Upload' button in the bottom-right of the screen.
 
 11. Click the 'Create Environment' button in the bottom-right of the screen. You should see a screen
-like the following:
-![step11.png](https://s3.amazonaws.com/beacongrid-hosted-media/step11.PNG)
+like the following:<br/>
+![step11.png](https://s3.amazonaws.com/beacongrid-hosted-media/step11.PNG)<br/>
 
 Wait a few minutes while the EC2 instance launches. Since you have not setup the command to run 
-the example application, you will see that the 'Health' of the application is degraded. 
+the example application, you will see that the 'Health' of the application is degraded. <br/>
 
-![step11-2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step11-2.PNG)
+![step11-2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step11-2.PNG)<br/>
 
 12. To setup the command to start the application, click the 'Configuration' link on the left 
-side of the screen.
-![step12.png](https://s3.amazonaws.com/beacongrid-hosted-media/step12.PNG)
+side of the screen.<br/>
+![step12.png](https://s3.amazonaws.com/beacongrid-hosted-media/step12.PNG)<br/>
 
-13. Click the Gear icon in the 'Software Configuration' section.
-![step13.png](https://s3.amazonaws.com/beacongrid-hosted-media/step13.PNG)
+13. Click the Gear icon in the 'Software Configuration' section.<br/>
+![step13.png](https://s3.amazonaws.com/beacongrid-hosted-media/step13.PNG)<br/>
 
-14. In the 'Node command' textbox, enter ```npm start```
-![step14.png](https://s3.amazonaws.com/beacongrid-hosted-media/step14.PNG)
+14. In the 'Node command' textbox, enter ```npm start```<br/>
+![step14.png](https://s3.amazonaws.com/beacongrid-hosted-media/step14.PNG)<br/>
 
 15. Scroll down and click the 'Apply' button in the bottom-right of the screen. The application will
 begin updating it's configuration and restart itself. Assuming all went well, your screen should
-look similar to this:
-![step15.png](https://s3.amazonaws.com/beacongrid-hosted-media/step15.PNG)
+look similar to this:<br/>
+![step15.png](https://s3.amazonaws.com/beacongrid-hosted-media/step15.PNG)<br/>
 
-16. To test that the application is running, click the URL listed here:
-![step16.png](https://s3.amazonaws.com/beacongrid-hosted-media/step16.PNG)
+16. To test that the application is running, click the URL listed here:<br/>
+![step16.png](https://s3.amazonaws.com/beacongrid-hosted-media/step16.PNG)<br/>
 
-If your application successfully started, you should see a new tab open with this:
-![step16-2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step16-2.PNG)
+If your application successfully started, you should see a new tab open with this:<br/>
+![step16-2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step16-2.PNG)<br/>
 
 17. Make a note of this URL, as we will be using it when we setup the webhook.
 
 ## How to setup a BeaconGrid Webhook
 1. Log into your account and open the [GridScan page](https://dashboard.beacongrid.com/#/webhooks).
-    Here, you'll see a table listing **GridScan Webhooks**.
-![step1p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step1p2.PNG)
+    Here, you'll see a table listing **GridScan Webhooks**.<br/>
+![step1p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step1p2.PNG)<br/>
 
-2. Click on the add button in the table's header to add a new Webhook:
-![step2p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2p2.PNG)
+2. Click on the add button in the table's header to add a new Webhook:<br/>
+![step2p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2p2.PNG)<br/>
     
 3. Enter a name for your webhook, select 'Bluetooth' from the 'Type' drop down list,
 enter the URL noted earlier (should be in the format ```http://(URL From AWS)/gridscan``` So in the case of
 the earlier example we would use ```http://Sample-env.d8ks3pb6xd.us-east-2.elasticbeanstalk.com/gridscan```),
 select the sensor you would like to use to get scan data from,
-and enter ```Example-Secret``` into the 'Secret' textbox.
-![step3p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3p2.PNG)
+and enter ```Example-Secret``` into the 'Secret' textbox.<br/>
+![step3p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3p2.PNG)<br/>
 
-4. Click the save button to create your new webhook.
-![step4p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step4p2.PNG)
+4. Click the save button to create your new webhook.<br/>
+![step4p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step4p2.PNG)<br/>
 
 5. On the row of your new webhook, click the 'Validate' button in the rightmost column.
 If your setup is correct, the records will reload and confirm that your webhook is valid.
@@ -103,13 +103,13 @@ the sensor you selected is optimized for scanning and has Bluetooth Scan turned 
 
 ## Verifying the AWS listening server is receiving data
 1. Go back to your AWS account Elastic Beanstalk dashboard and go into your example
-application. Click on the 'Logs' section from the left side navigation.
-![step1p3.png](https://s3.amazonaws.com/beacongrid-hosted-media/step1p3.PNG)
+application. Click on the 'Logs' section from the left side navigation.<br/>
+![step1p3.png](https://s3.amazonaws.com/beacongrid-hosted-media/step1p3.PNG)<br/>
 
 2. Click the 'Request Logs' button, then click the 'Last 100 Lines' button. After a short
 delay you should see a log file displayed. Click the 'Download' button on the line of the
-log fie you requested.
-![step2p3.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2p3.PNG)
+log fie you requested.<br/>
+![step2p3.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2p3.PNG)<br/>
 
 If your log file looks like the above screenshot, then your example application is successfully
 receiving data from BeaconGrid. If you are not seeing data posted but were able to visit the URL
