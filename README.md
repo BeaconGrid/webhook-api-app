@@ -137,7 +137,7 @@ request into a useable object is:
   var gridScanObj = JSON.parse(req.body);
 ```
 
-Most platforms come with a preexisting method to handle parsing JavaScript and JSON 
+Most platforms come with a preexisting method to handle parsing JSON and JSON 
 is a very human-readable format which is why we have chosen to use JSON when sending 
 out data scanned from BeaconGrid sensors.
 
