@@ -1,8 +1,12 @@
-# BeaconGrid WebHookAPI App
+# BeaconGrid WebHook App
 
 ## Overview
 This project (and README) will show you how to get started using BeaconGrid's
-Webhook API to receive data from GridScan.
+Webhooks to receive data from GridScan.
+
+Unlike other location platforms, there's _no coding or editing of code files_
+whatsoever, to retrieve real-time data. Just interacting with a free 
+AWS account and our Dashboard. That's it.
 
 ## Setup in an AWS Environment
 
@@ -122,7 +126,21 @@ API that supports both a `GET` and `POST`. The `GET` method would be called by
 BeaconGrid to validate the API URL as well as the validator on the webhook
 and the `POST` method will be used by BeaconGrid to post the data to your API.d
 
+
+
 ## Example data POSTed to the listening server
+The following is an example of data that will come from BeaconGrid. This information
+is always sent in JSON format and can be deserialized as such in any programming language.
+For Javascript, the function to turn the JSON string in the body of the posted
+request into a useable object is: 
+```JavaScript
+  var gridScanObj = JSON.parse(req.body);
+```
+
+Most platforms come with a preexisting method to handle parsing JavaScript and JSON 
+is a very human-readable format which is why we have chosen to use JSON when sending 
+out data scanned from BeaconGrid sensors.
+
 ```json
 headers: {
   "Content-Type": "application/json",
