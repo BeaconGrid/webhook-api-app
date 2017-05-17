@@ -80,8 +80,7 @@ If your application successfully started, you should see a new tab open with thi
 ## How to setup a BeaconGrid Webhook
 1. Log into your account and open the [GridScan page](https://dashboard.beacongrid.com/#/webhooks).
     Here, you'll see a table listing **GridScan Webhooks**.<br/>
-![step1p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step1p2.PNG)<br/>
-
+    
 2. Click on the add button in the table's header to add a new Webhook:<br/>
 ![step2p2.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2p2.PNG)<br/>
     
