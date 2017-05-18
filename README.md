@@ -126,7 +126,21 @@ API that supports both a `GET` and `POST`. The `GET` method would be called by
 BeaconGrid to validate the API URL as well as the validator on the webhook
 and the `POST` method will be used by BeaconGrid to post the data to your API.d
 
+## Updating the example application in AWS
+1. If you would like to continue working in your AWS environment, to upload new versions of
+the example application after you're done adding code, go to your application's dasboard. 
+Additionally, zip up your code into one single .zip file in preparation to uploading it.<br/>
+![step1p4.png](https://s3.amazonaws.com/beacongrid-hosted-media/step1p4.PNG)<br/>
 
+2. Click the 'Upload and Deploy' button to display a popup. <br/>
+![step2p4.png](https://s3.amazonaws.com/beacongrid-hosted-media/step2p4.PNG)<br/>
+
+3. Click the 'Browse' button to navigate to your zipped up code and select it. Then 
+enter the version label into the 'Version label' textbox.<br/>
+![step3p4.png](https://s3.amazonaws.com/beacongrid-hosted-media/step3p4.PNG)<br/>
+
+4. Click the 'Deploy' button to complete the process of updating your application's 
+source code
 
 ## Example data POSTed to the listening server
 The following is an example of data that will come from BeaconGrid. This information
