@@ -124,7 +124,11 @@ You can extend the nodejs-express demo listening server, or implement your own
 in whatever language or framework you prefer; the listening server can be any
 API that supports both a `GET` and `POST`. The `GET` method would be called by
 BeaconGrid to validate the API URL as well as the validator on the webhook
-and the `POST` method will be used by BeaconGrid to post the data to your API.d
+and the `POST` method will be used by BeaconGrid to post the data to your API.
+
+Another feature of this example application is that you may query your new server
+with a ```GET``` request at path ```/data``` to see the last 10 minutes of sensor
+information that came in via the webhooks.
 
 ## Updating the example application in AWS
 1. If you would like to continue working in your AWS environment, to upload new versions of
