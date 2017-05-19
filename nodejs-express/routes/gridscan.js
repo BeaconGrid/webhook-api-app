@@ -2,7 +2,8 @@ var express = require('express'),
   fs = require('fs'),
   path = require('path'),
   secrets = require('../secrets.json'),
-  router = express.Router();
+  router = express.Router(),
+  shared = require('../shared-data');
 
 router.get('/', function (req, res) {
   res.json({
@@ -58,6 +59,15 @@ router.post('/', function (req, res) {
   console.log('-----GRIDSCAN-POSTED-MESSAGE----');
   console.log(req.body);
   console.log('---------------------------------');
+
+  // The below logic filters data in the sensor data list to remove records that are older than 10 minutes
+  shared.sensorData = shared.sensorData.concat(req.body);
+  var newDataSet = [];
+  for (var i in shared.sensorData)
+    if (Date.now() - shared.sensorData[i].timestamp < 10 * 60 * 1000)
+      newDataSet.push(shared.sensorData[i]);
+  shared.sensorData = newDataSet;
+
   res.json({
     token: secrets.validator
   });

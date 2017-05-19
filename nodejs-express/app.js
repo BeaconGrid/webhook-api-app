@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var gridscan = require('./routes/gridscan');
+var data =require('./routes/data');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use('/gridscan', gridscan);
+app.use('/data', data);
 
 /// catch 404 and forward to error handler
 app.use(function (req, res, next) {
